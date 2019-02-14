@@ -31,12 +31,13 @@ You can see a verity of implementations inside app.py. There are currently 2 way
 1. Set up a 'secret' and make them valid and take them away as needed:
   * Before:
 	   * ```
-        if secret == 1234 or secret == 1234 or secret == 1234 or secret == 1234:
-                    # If the secret matches update the row
-                    sheet.update_cell(row, 6, "1")
-                    ret = "Your attendence has been taken"
-                else:
-                    ret = "Invalid secret"
+       elif labnumber == 4:
+           if secret == 3038 or secret == 3028 or secret == 3719 or secret == 3918:
+               # If the secret matches update the row
+               sheet.update_cell(row, 6, "1")
+               ret = "Your attendence has been taken"
+           else:
+               ret = "Invalid secret"
        ```
   * After:
   	* ```
