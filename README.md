@@ -47,27 +47,27 @@ You can see a verity of implementations inside app.py. There are currently 2 way
 2. Make the 'secret' expire after a set time using Pythons datetime.
 	* ```
     # Assign the correct Lab timings:
-            section1 = d.replace(hour=14, minute=50, second=0,  day=14, month=2)
-            section2 = d.replace(hour=16, minute=25, second=0,  day=14, month=2)
-            section3 = d.replace(hour=9, minute=55, second=0,  day=15, month=2)
-            section4 = d.replace(hour=11, minute=0, second=0,  day=15, month=2)
+      section1 = d.replace(hour=14, minute=50, second=0,  day=14, month=2)
+      section2 = d.replace(hour=16, minute=25, second=0,  day=14, month=2)
+      section3 = d.replace(hour=9, minute=55, second=0,  day=15, month=2)
+      section4 = d.replace(hour=11, minute=0, second=0,  day=15, month=2)
 
-            if (secret == 1234  and d < section1):
-                # If the secret matches update the row
-                sheet.update_cell(row, 5, "1")
-                ret = "Your attendence has been taken"
-            elif (secret == 1234 and d < section2):
-                # If the secret matches update the row
-                sheet.update_cell(row, 5, "1")
-                ret = "Your attendence has been taken"
-            elif (secret == 1234 and d < section3):
-                # If the secret matches update the row
-                sheet.update_cell(row, 5, "1")
-                ret = "Your attendence has been taken"
-            elif (secret == 1234 and d < section4):
-                # If the secret matches update the row
-                sheet.update_cell(row, 5, "1")
-                ret = "Your attendence has been taken"
-            else:
-                ret = "Invalid secret"
+      if (secret == 1234  and d < section1):
+          # If the secret matches update the row
+          sheet.update_cell(row, 5, "1")
+          ret = "Your attendence has been taken"
+      elif (secret == 1234 and d < section2):
+          # If the secret matches update the row
+          sheet.update_cell(row, 5, "1")
+          ret = "Your attendence has been taken"
+      elif (secret == 1234 and d < section3):
+          # If the secret matches update the row
+          sheet.update_cell(row, 5, "1")
+          ret = "Your attendence has been taken"
+      elif (secret == 1234 and d < section4):
+          # If the secret matches update the row
+          sheet.update_cell(row, 5, "1")
+          ret = "Your attendence has been taken"
+      else:
+          ret = "Invalid secret"
     ```
