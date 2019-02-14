@@ -30,18 +30,18 @@ Finally you need to set up a correctly formatted Google Doc. You can check [here
 You can see a verity of implementations inside app.py. There are currently 2 ways of implementing the attendance tracking:
 1. Set up a 'secret' and make them valid and take them away as needed:
   * Before:
-	* ```
-    if secret == 1234 or secret == 1234 or secret == 1234 or secret == 1234:
-                # If the secret matches update the row
-                sheet.update_cell(row, 6, "1")
-                ret = "Your attendence has been taken"
-            else:
-                ret = "Invalid secret"
-    ```
+	   * ```
+        if secret == 1234 or secret == 1234 or secret == 1234 or secret == 1234:
+                    # If the secret matches update the row
+                    sheet.update_cell(row, 6, "1")
+                    ret = "Your attendence has been taken"
+                else:
+                    ret = "Invalid secret"
+       ```
   * After:
   	* ```
-    ret = "Invalid secret"
-    ```
+      ret = "Invalid secret"
+      ```
 
 
 2. Make the 'secret' expire after a set time using Pythons datetime.
