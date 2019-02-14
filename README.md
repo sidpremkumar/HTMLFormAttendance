@@ -5,13 +5,13 @@ This framework was created as a way to take attendance for a discussion/lab sect
 ## Set up:
 You need to change the following in app.py:
 1. Place your client_secret.json
-  *	```
+  *	```python
   	# TODO: Create your own client secret
 	  creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', 			scope)
     ```
 
 2. Open the corret workbook
- * ```
+ * ```python
   	# TODO: Enter your own workbook name
  	  sheet = client.open("").sheet1
    ```
@@ -19,7 +19,7 @@ You need to change the following in app.py:
 You need to change the following in attendance.html
 
 1. You need to enter the correct API callback id. Currently in app.py is it set to be '/submit'
-  * ```
+  * ```javascript
     // TODO: Enter API information here (i.e. link of where itshosted 	'.../takeAttendance')
 	  ret = $.post("", {labnumber:labnumber, secret:secret, 	username:username}).done(function(data){
     ```
@@ -30,7 +30,7 @@ Finally you need to set up a correctly formatted Google Doc. You can check [here
 You can see a verity of implementations inside app.py. There are currently 2 ways of implementing the attendance tracking:
 1. Set up a 'secret' and make them valid and take them away as needed:
   * Before:
-	   * ```
+	   * ```python
        elif labnumber == 4:
            if secret == 3038 or secret == 3028 or secret == 3719 or secret == 3918:
                # If the secret matches update the row
