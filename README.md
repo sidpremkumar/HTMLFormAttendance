@@ -27,7 +27,7 @@ You need to change the following in attendance.html
 Finally you need to set up a correctly formatted Google Doc. You can check [here](https://docs.google.com/spreadsheets/d/1C44g0BIyvtRYvx0jLonkiUMso8dzFOKcQUGUU_AxFw8/edit?usp=sharing) for a template. The API is currenlty set to mark '1' in the row and column to indicate their attendance. This can be changed easily in the API.
 ## Use:
 
-You can see a verity of implementations inside app.py. There are currently 2 ways of implementing the attendance tracking:
+You can see a verity of implementations inside app.py. The HTML form can be seen in attendance.html along with the needed parameters. There are currently 2 ways of implementing the attendance tracking:
 1. Set up a 'secret' and make them valid and take them away as needed:
   * Before:
     - ```python
