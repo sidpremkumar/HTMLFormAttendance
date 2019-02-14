@@ -7,12 +7,14 @@ You need to change the following in app.py:
 1. Place your client_secret.json
   *	```
   	# TODO: Create your own client secret
-	   creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret.jsoon', 			scope)
+	  creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', 			scope)
     ```
 
 2. Open the corret workbook
- *	```# TODO: Enter your own workbook name
- 	sheet = client.open("").sheet1```
+ * ```
+  	# TODO: Enter your own workbook name
+ 	  sheet = client.open("").sheet1
+   ```
 
 You need to change the following in attendance.html
 
