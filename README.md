@@ -47,7 +47,7 @@ You can see a verity of implementations inside app.py. There are currently 2 way
 
 
 2. Make the 'secret' expire after a set time using Pythons datetime.
-  * ```
+  * ```python
     # Assign the correct Lab timings:
       section1 = d.replace(hour=14, minute=50, second=0,  day=14, month=2)
       section2 = d.replace(hour=16, minute=25, second=0,  day=14, month=2)
