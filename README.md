@@ -41,13 +41,13 @@ You can see a verity of implementations inside app.py. There are currently 2 way
       ```
 
   * After:
-  	* ```
+  	* ```python
       ret = "Invalid secret"
       ```
 
 
 2. Make the 'secret' expire after a set time using Pythons datetime.
-	* ```
+  * ```
     # Assign the correct Lab timings:
       section1 = d.replace(hour=14, minute=50, second=0,  day=14, month=2)
       section2 = d.replace(hour=16, minute=25, second=0,  day=14, month=2)
@@ -72,4 +72,4 @@ You can see a verity of implementations inside app.py. There are currently 2 way
           ret = "Your attendence has been taken"
       else:
           ret = "Invalid secret"
-    ```
+      ````
