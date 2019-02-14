@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+        <link rel="shortcut icon" href="../images/icon.png" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body>
+
+
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main">
+						<div class="inner">
+                            <h1>Attendance</h1>
+                            <hr>
+                            <div id="forminfo">
+                            <form method="post" action="http://127.0.0.1:5000/ ">
+                                <h3>Username:</h3>
+                                <input type="text" name="username" id="username" value="" placeholder="Username">
+                                <br>
+                                <h3>Secret:</h3>
+                                <input type="text" name="secret" id="secret" value="" placeholder="1234">
+                            <br>
+                                <h3>Lab Number:</h3>
+                                <select name="labnumber" id="labnumber">
+                                    <option value="">Lab Number</option>
+																		<option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                </select>
+                            </form>
+														<br>
+
+                            <input type="submit" onclick="query()"><br/>
+                            </div>
+						</div>
+						
+					</section>
+
+			</div>
+
+
+
+
+            <script>
+           function query() {
+               labnumber = document.getElementById("labnumber").value;
+               secret = document.getElementById("secret").value;
+               username = document.getElementById("username").value;
+							 // TODO: Enter API information here (i.e. link of where its hosted '.../takeAttendance')
+               ret = $.post("", {labnumber:labnumber, secret:secret, username:username}).done(function(data){
+                   response = data['response'];
+                   var ret = document.createElement("h3");
+                   ret.innerHTML = response;
+                   document.getElementById("forminfo").innerHTML = response;
+                   var btn = document.createElement("BUTTON");
+                   var t = document.createTextNode("Go Back");
+                   btn.appendChild(t);
+                   btn.addEventListener('click', function() {
+                        window.location.reload();
+                    }, false);
+                   var mybr = document.createElement('br');
+                   document.getElementById("forminfo").appendChild(mybr);
+                   document.getElementById("forminfo").appendChild(mybr);
+                   document.getElementById("forminfo").appendChild(btn);
+
+               }).fail(function(){
+                   try{
+                   response = data['response'];
+                    }
+                   catch(err){
+                       response = "Uh Oh, something went wrong."
+                   }
+                   var ret = document.createElement("h3");
+                   ret.innerHTML = response;
+                   document.getElementById("forminfo").innerHTML = response;
+                   var btn = document.createElement("BUTTON");
+                   var t = document.createTextNode("Go Back");
+                   btn.addEventListener('click', function() {
+                        window.location.reload();
+                    }, false);
+                   btn.appendChild(t);
+                   var mybr = document.createElement('br');
+                   document.getElementById("forminfo").appendChild(mybr);
+                   document.getElementById("forminfo").appendChild(mybr);
+                   document.getElementById("forminfo").appendChild(btn);
+
+               });
+
+            }
+
+        </script>
+
+	</body>
+</html>
